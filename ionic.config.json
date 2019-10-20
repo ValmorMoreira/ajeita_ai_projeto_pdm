@@ -1,0 +1,7 @@
+{
+  "name": "ajeita_ai",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

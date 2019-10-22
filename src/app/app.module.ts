@@ -11,12 +11,14 @@ import {TabsPage} from '../pages/tabs/tabs';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {LoginPage} from "../pages/login/login";
+import {CadastroPage} from "../pages/cadastro/cadastro";
 
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
     ContactPage,
+    CadastroPage,
     HomePage,
     TabsPage,
     LoginPage
@@ -30,6 +32,7 @@ import {LoginPage} from "../pages/login/login";
     MyApp,
     AboutPage,
     ContactPage,
+    CadastroPage,
     HomePage,
     TabsPage,
     LoginPage

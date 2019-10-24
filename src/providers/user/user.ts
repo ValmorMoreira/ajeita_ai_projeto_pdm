@@ -10,8 +10,15 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class UserProvider {
 
-  constructor(public http: HttpClient) {
+  // constructor(public http: HttpClient) {
+  //   console.log('Hello UserProvider Provider');
+  // }
+  constructor() {
     console.log('Hello UserProvider Provider');
   }
 
+
+  heloow(){
+    console.log("BoaS")
+  }
 }

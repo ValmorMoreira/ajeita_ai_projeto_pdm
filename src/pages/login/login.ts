@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {HomePage} from "../home/home";
 import {TabsPage} from "../tabs/tabs";
 import {CadastroPage} from "../cadastro/cadastro";
+import {UserProvider} from "../../providers/user/user";
 
 /**
  * Generated class for the LoginPage page.
@@ -18,7 +19,10 @@ import {CadastroPage} from "../cadastro/cadastro";
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public userProvider: UserProvider) {
   }
 
   ionViewDidLoad() {
@@ -26,16 +30,22 @@ export class LoginPage {
   }
 
 
-  login(){
-    this.navCtrl.push(TabsPage, {}, {animate: true} );
+  login() {
+    this.navCtrl.push(TabsPage, {}, {animate: true});
+
+    console.log('Dentro do login');
+    let user = { this.}
+
+    this.userProvider.heloow();
+
   }
 
-  cadastro(){
-    this.navCtrl.push(CadastroPage, {}, {animate: true} );
+  cadastro() {
+    this.navCtrl.push(CadastroPage, {}, {animate: true});
   }
 
-  logout(){
-    this.navCtrl.push(HomePage, {}, {animate: true} );
+  logout() {
+    this.navCtrl.push(HomePage, {}, {animate: true});
   }
 
 }

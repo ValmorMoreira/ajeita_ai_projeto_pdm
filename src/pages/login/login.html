@@ -15,19 +15,37 @@
   <div *ngIf="autenticacao" padding>
     <h3>Você está conectado!</h3>
   </div>
-  <ion-list>
-    <ion-item>
-      <ion-label fixed>E-mail</ion-label>
-      <ion-input type="text" [(ngModel)]="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label fixed>Senha</ion-label>
-      <ion-input type="password" [(ngModel)]="senha"></ion-input>
-    </ion-item>
-  </ion-list>
-  <div padding>
-    <button ion-button (click)="cadastro()">Cadastrar</button>
-    <button ion-button  (click)="login()"> Login</button>
-    <button ion-button (click)="logout()"> Logout</button>
-  </div>
+
+  <ion-card>
+
+    <ion-card-header>
+      Seja bem vindo!
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label floating>E-mail</ion-label>
+          <ion-input type="text" [(ngModel)]="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Senha</ion-label>
+          <ion-input type="password" [(ngModel)]="senha"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+      <div padding center>
+        <button ion-button (click)="cadastro()">Cadastrar</button>
+        <button ion-button (click)="login()"> Login</button>
+        <button ion-button (click)="logout()"> Logout</button>
+      </div>
+
+    </ion-card-content>
+
+  </ion-card>
+
+
+
 </ion-content>

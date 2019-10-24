@@ -12,6 +12,7 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {LoginPage} from "../pages/login/login";
 import {CadastroPage} from "../pages/cadastro/cadastro";
+import { UserProvider } from '../providers/user/user';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {CadastroPage} from "../pages/cadastro/cadastro";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UserProvider
   ]
 })
 export class AppModule {

@@ -22,4 +22,8 @@ export class CadastroPage {
     console.log('ionViewDidLoad CadastroPage');
   }
 
+  salvarUser(){
+    console.log("Salvando usuário");
+  }
+
 }

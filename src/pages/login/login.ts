@@ -26,13 +26,15 @@ export class LoginPage {
 
 
   login(){
-    this.navCtrl.push(HomePage, {}, {animate: true} );
-
+    this.navCtrl.push(LoginPage, {}, {animate: true} );
   }
 
   cadastro(){
     this.navCtrl.push(CadastroPage, {}, {animate: true} );
+  }
 
+  logout(){
+    this.navCtrl.push(HomePage, {}, {animate: true} );
   }
 
 }

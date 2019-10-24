@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {HomePage} from "../home/home";
+import {TabsPage} from "../tabs/tabs";
 import {CadastroPage} from "../cadastro/cadastro";
 
 /**
@@ -26,7 +27,7 @@ export class LoginPage {
 
 
   login(){
-    this.navCtrl.push(LoginPage, {}, {animate: true} );
+    this.navCtrl.push(TabsPage, {}, {animate: true} );
   }
 
   cadastro(){

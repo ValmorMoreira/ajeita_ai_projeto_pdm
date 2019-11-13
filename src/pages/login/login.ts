@@ -34,7 +34,7 @@ export class LoginPage {
     this.navCtrl.push(TabsPage, {}, {animate: true});
 
     console.log('Dentro do login');
-    let user = { this.}
+    // let user = { this.}
 
     this.userProvider.heloow();
 

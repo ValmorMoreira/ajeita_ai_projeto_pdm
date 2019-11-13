@@ -11,21 +11,99 @@
 </ion-header>
 
 <ion-content padding>
-<h1>Cadastro</h1>
 
-<ion-list>
-  <ion-item>
-    <ion-label fixed>E-mail</ion-label>
-    <ion-input type="text" [(ngModel)]="email"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label fixed>Senha</ion-label>
-    <ion-input type="password" [(ngModel)]="senha"></ion-input>
-  </ion-item>
-</ion-list>
 
-<div padding>
-  <button ion-button (click)="salvarUser()">Salvar</button>
-</div>
+  <ion-card>
+
+    <ion-card-header>
+      <h1>Cadastro</h1>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-list>
+
+
+
+
+        <ion-item>
+          <ion-label floating>Nome</ion-label>
+          <ion-input warning class="errosInput" *ngIf="errorNome; else errorClass" #noClass type="text" name="nome"
+            [(ngModel)]="model.nome">
+          </ion-input>
+          <ion-input *ngIf="!errorNome; else noClass" #erroClass type="text" name="nome" [(ngModel)]="model.nome">
+          </ion-input>
+        </ion-item>
+
+        <div class="erros">
+          <small> {{errorNome}} </small>
+        </div>
+
+
+
+
+        <ion-item>
+          <ion-label floating>Sobrenome</ion-label>
+          <ion-input warning class="errosInput" *ngIf="errorSobrenome; else errorClass" #noClass type="text"
+            name="sobrenome" [(ngModel)]="model.sobrenome">
+          </ion-input>
+          <ion-input *ngIf="!errorSobrenome; else noClass" #erroClass type="text" name="sobrenome"
+            [(ngModel)]="model.sobrenome"></ion-input>
+        </ion-item>
+
+        <div class="erros">
+          <small> {{errorSobrenome}} </small>
+        </div>
+
+        <ion-item>
+          <ion-label floating>Digite a senha</ion-label>
+          <ion-input warning class="errosInput" *ngIf="errorSenha; else errorClass" #noClass type="text" name="senha"
+            [(ngModel)]="model.senha">
+          </ion-input>
+          <ion-input *ngIf="!errorSenha; else noClass" #erroClass type="text" name="senha" [(ngModel)]="model.senha">
+          </ion-input>
+        </ion-item>
+
+        <div class="erros">
+          <small> {{errorSenha}} </small>
+        </div>
+
+
+        <ion-item>
+          <ion-label floating>repita a senha</ion-label>
+          <ion-input warning class="errosInput" *ngIf="errorSenha; else errorClass" #noClass type="text" name="senha1"
+            [(ngModel)]="model.senha1">
+          </ion-input>
+          <ion-input *ngIf="!errorSenha; else noClass" #erroClass type="text" name="senha1" [(ngModel)]="model.senha1">
+          </ion-input>
+        </ion-item>
+
+
+        <div class="erros">
+          <small> {{errorSenha}} </small>
+        </div>
+
+        <ion-item>
+          <ion-label floating>email</ion-label>
+          <ion-input warning class="errosInput" *ngIf="errorEmail; else errorClass" #noClass type="text" name="email"
+            [(ngModel)]="model.email">
+          </ion-input>
+          <ion-input *ngIf="!errorEmail; else noClass" #erroClass type="text" name="email" [(ngModel)]="model.email">
+          </ion-input>
+        </ion-item>
+
+        <div class="erros">
+          <small> {{errorEmail}} </small>
+        </div>
+
+      </ion-list>
+
+
+      <div padding>
+        <button ion-button ion-col center (click)="salvarUser()">Salvar</button>
+      </div>
+    </ion-card-content>
+
+  </ion-card>
 
 </ion-content>

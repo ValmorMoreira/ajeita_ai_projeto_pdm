@@ -26,15 +26,21 @@
       <ion-list>
         <ion-item>
           <ion-label floating>E-mail</ion-label>
-          <ion-input type="text" [(ngModel)]="email"></ion-input>
+          <ion-input type="text" name="email" [(ngModel)]="model.email"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label floating>Senha</ion-label>
-          <ion-input type="password" [(ngModel)]="senha"></ion-input>
+          <ion-input type="password" name="senha" [(ngModel)]="model.senha"></ion-input>
         </ion-item>
 
+        <div class="erros">
+            <small> {{erroLogin}} </small>
+          </div>
+
       </ion-list>
+
+
 
       <div padding center>
         <button ion-button (click)="cadastro()">Cadastrar</button>

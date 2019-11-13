@@ -9,7 +9,8 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class UserProvider {
-  apiUrl = 'http://localhost/spotted/cadastroApi';
+  apiCadastro = 'http://localhost/spotted/cadastroApi';
+  apiLogin = 'http://localhost/spotted/login/api';
 
   // constructor(public http: HttpClient) {
   //   console.log('Hello UserProvider Provider');
@@ -25,7 +26,18 @@ export class UserProvider {
 
   addContact(data) {
     return new Promise((resolve, reject) => {
-      this.http.post(this.apiUrl + '', data)
+      this.http.post(this.apiCadastro + '', data)
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
+  login(data){
+    return new Promise((resolve, reject) => {
+      this.http.post(this.apiLogin + '', data)
         .subscribe(res => {
           resolve(res);
         }, (err) => {

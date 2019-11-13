@@ -1,0 +1,132 @@
+[16-Jul-2019 13:46:49 UTC] PHP Warning:  require_once(../framework/DW3Carregador.php): failed to open stream: No such file or directory in /home3/rmo96c25/public_html/projeto/index.php on line 3
+[16-Jul-2019 13:46:49 UTC] PHP Fatal error:  require_once(): Failed opening required '../framework/DW3Carregador.php' (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home3/rmo96c25/public_html/projeto/index.php on line 3
+[16-Jul-2019 13:47:06 UTC] PHP Warning:  require_once(../framework/DW3Carregador.php): failed to open stream: No such file or directory in /home3/rmo96c25/public_html/projeto/index.php on line 3
+[16-Jul-2019 13:47:06 UTC] PHP Fatal error:  require_once(): Failed opening required '../framework/DW3Carregador.php' (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home3/rmo96c25/public_html/projeto/index.php on line 3
+[16-Jul-2019 13:48:57 UTC] PHP Warning:  array_key_exists(): The first argument should be either a string or an integer in /home3/rmo96c25/public_html/framework/DW3Roteador.php on line 80
+[16-Jul-2019 13:50:29 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'ricardo'@'localhost' (using password: YES) in /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php:53
+Stack trace:
+#0 /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php(53): PDO->__construct('mysql:host=loca...', 'ricardo', 'ricardo123', Array)
+#1 /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php(41): Framework\DW3BancoDeDados::criarPdo()
+#2 /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php(27): Framework\DW3BancoDeDados::getPdo()
+#3 /home3/rmo96c25/public_html/projeto/mvc/Modelo/Usuario.php(66): Framework\DW3BancoDeDados::prepare('SELECT * FROM u...')
+#4 /home3/rmo96c25/public_html/projeto/mvc/Controlador/LoginControlador.php(56): Modelo\Usuario::buscarEmail('')
+#5 [internal function]: Controlador\LoginControlador->login()
+#6 /home3/rmo96c25/public_html/framework/DW3Aplicacao.php(44): call_user_func_array(Array, Array)
+#7 /home3/rmo96c25/public_html/framework/DW3Aplicacao.php(18): Framework\DW3Aplicacao->executa in /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php on line 53
+[16-Jul-2019 13:59:02 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'ricardo'@'localhost' (using password: YES) in /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php:53
+Stack trace:
+#0 /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php(53): PDO->__construct('mysql:host=loca...', 'ricardo', 'ricardo123', Array)
+#1 /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php(41): Framework\DW3BancoDeDados::criarPdo()
+#2 /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php(27): Framework\DW3BancoDeDados::getPdo()
+#3 /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php(447): Framework\DW3BancoDeDados::prepare('SELECT q.id_que...')
+#4 /home3/rmo96c25/public_html/projeto/mvc/Controlador/QuestaoControlador.php(51): Modelo\Questao::buscarTodos(4, 0)
+#5 /home3/rmo96c25/public_html/projeto/mvc/Controlador/QuestaoControlador.php(61): Controlador\QuestaoControlador->calcularPaginacao(NULL)
+#6 [internal function]: Controlador\QuestaoControlador->naoLogado()
+#7 /home3/rmo96c25/public_html/framework/D in /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php on line 53
+[16-Jul-2019 13:59:02 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'ricardo'@'localhost' (using password: YES) in /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php:53
+Stack trace:
+#0 /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php(53): PDO->__construct('mysql:host=loca...', 'ricardo', 'ricardo123', Array)
+#1 /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php(41): Framework\DW3BancoDeDados::criarPdo()
+#2 /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php(27): Framework\DW3BancoDeDados::getPdo()
+#3 /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php(447): Framework\DW3BancoDeDados::prepare('SELECT q.id_que...')
+#4 /home3/rmo96c25/public_html/projeto/mvc/Controlador/QuestaoControlador.php(51): Modelo\Questao::buscarTodos(4, 0)
+#5 /home3/rmo96c25/public_html/projeto/mvc/Controlador/QuestaoControlador.php(61): Controlador\QuestaoControlador->calcularPaginacao(NULL)
+#6 [internal function]: Controlador\QuestaoControlador->naoLogado()
+#7 /home3/rmo96c25/public_html/framework/D in /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php on line 53
+[16-Jul-2019 13:59:06 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'ricardo'@'localhost' (using password: YES) in /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php:53
+Stack trace:
+#0 /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php(53): PDO->__construct('mysql:host=loca...', 'ricardo', 'ricardo123', Array)
+#1 /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php(41): Framework\DW3BancoDeDados::criarPdo()
+#2 /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php(27): Framework\DW3BancoDeDados::getPdo()
+#3 /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php(447): Framework\DW3BancoDeDados::prepare('SELECT q.id_que...')
+#4 /home3/rmo96c25/public_html/projeto/mvc/Controlador/QuestaoControlador.php(51): Modelo\Questao::buscarTodos(4, 0)
+#5 /home3/rmo96c25/public_html/projeto/mvc/Controlador/QuestaoControlador.php(61): Controlador\QuestaoControlador->calcularPaginacao(NULL)
+#6 [internal function]: Controlador\QuestaoControlador->naoLogado()
+#7 /home3/rmo96c25/public_html/framework/D in /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php on line 53
+[16-Jul-2019 13:59:07 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'ricardo'@'localhost' (using password: YES) in /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php:53
+Stack trace:
+#0 /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php(53): PDO->__construct('mysql:host=loca...', 'ricardo', 'ricardo123', Array)
+#1 /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php(41): Framework\DW3BancoDeDados::criarPdo()
+#2 /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php(27): Framework\DW3BancoDeDados::getPdo()
+#3 /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php(447): Framework\DW3BancoDeDados::prepare('SELECT q.id_que...')
+#4 /home3/rmo96c25/public_html/projeto/mvc/Controlador/QuestaoControlador.php(51): Modelo\Questao::buscarTodos(4, 0)
+#5 /home3/rmo96c25/public_html/projeto/mvc/Controlador/QuestaoControlador.php(61): Controlador\QuestaoControlador->calcularPaginacao(NULL)
+#6 [internal function]: Controlador\QuestaoControlador->naoLogado()
+#7 /home3/rmo96c25/public_html/framework/D in /home3/rmo96c25/public_html/framework/DW3BancoDeDados.php on line 53
+[16-Jul-2019 14:49:50 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarSeQuetaoJaFoiRespondida() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 410
+[16-Jul-2019 14:49:50 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarSeQuetaoJaFoiRespondida() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 410
+[16-Jul-2019 14:49:56 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarSeQuetaoJaFoiRespondida() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 410
+[16-Jul-2019 14:49:56 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarSeQuetaoJaFoiRespondida() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 410
+[16-Jul-2019 14:57:00 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarSeQuetaoJaFoiRespondida() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 410
+[16-Jul-2019 14:57:00 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarSeQuetaoJaFoiRespondida() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 410
+[16-Jul-2019 14:57:05 UTC] PHP Deprecated:  Non-static method Modelo\Questao::deletarById() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Controlador/MinhasQuestoesControlador.php on line 76
+[16-Jul-2019 14:57:05 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarSeQuetaoJaFoiRespondida() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 410
+[16-Jul-2019 15:15:41 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarSeQuetaoJaFoiRespondida() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 410
+[16-Jul-2019 15:15:47 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarSeQuetaoJaFoiRespondida() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 410
+[16-Jul-2019 15:25:55 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 15:26:07 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 15:26:32 UTC] PHP Deprecated:  Non-static method Modelo\Questao::getQuantidadeErros() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 262
+[16-Jul-2019 15:26:33 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 15:38:57 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarSeQuetaoJaFoiRespondida() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 410
+[16-Jul-2019 20:22:58 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarSeQuetaoJaFoiRespondida() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 410
+[16-Jul-2019 20:32:21 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarSeQuetaoJaFoiRespondida() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 410
+[16-Jul-2019 20:32:21 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarSeQuetaoJaFoiRespondida() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 410
+[16-Jul-2019 20:32:32 UTC] PHP Deprecated:  Non-static method Modelo\Questao::deletarById() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Controlador/MinhasQuestoesControlador.php on line 76
+[16-Jul-2019 20:32:32 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarSeQuetaoJaFoiRespondida() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 410
+[16-Jul-2019 20:32:44 UTC] PHP Deprecated:  Non-static method Modelo\Questao::deletarById() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Controlador/MinhasQuestoesControlador.php on line 76
+[16-Jul-2019 20:48:37 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 20:48:37 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 20:48:37 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 20:48:42 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 20:48:42 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 20:48:42 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 20:48:54 UTC] PHP Deprecated:  Non-static method Modelo\Questao::getQuantidadeErros() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 262
+[16-Jul-2019 20:48:54 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 20:48:54 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 20:48:54 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 20:49:09 UTC] PHP Deprecated:  Non-static method Modelo\Questao::getQuantidadeErros() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 262
+[16-Jul-2019 20:49:09 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 20:49:09 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 20:49:09 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 20:49:24 UTC] PHP Deprecated:  Non-static method Modelo\Questao::getQuantidadeErros() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 262
+[16-Jul-2019 20:49:25 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 20:49:25 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 20:49:25 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 20:49:34 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 20:49:34 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 20:49:34 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 20:49:40 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarSeQuetaoJaFoiRespondida() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 410
+[16-Jul-2019 20:49:51 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarSeQuetaoJaFoiRespondida() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 410
+[16-Jul-2019 21:03:11 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 21:03:11 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 21:03:11 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Jul-2019 21:03:11 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[21-Jul-2019 22:39:47 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarSeQuetaoJaFoiRespondida() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 410
+[16-Aug-2019 00:28:12 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarSeQuetaoJaFoiRespondida() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 410
+[16-Aug-2019 00:28:22 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:28:22 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:28:23 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:28:23 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:28:41 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:28:41 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:28:41 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:28:49 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:28:49 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:28:49 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:28:49 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:29:00 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:29:00 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:29:00 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:29:00 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:29:28 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:29:28 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:29:28 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:29:28 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:31:21 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:31:21 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:31:21 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:31:21 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:31:31 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:31:31 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:31:31 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357
+[16-Aug-2019 00:31:31 UTC] PHP Deprecated:  Non-static method Modelo\Questao::verificarQuestaoRespondidaByUser() should not be called statically in /home3/rmo96c25/public_html/projeto/mvc/Modelo/Questao.php on line 357

@@ -1,0 +1,16 @@
+:root {
+    --main-bg-color: black;
+    --nav-bg-color: black;
+    --footer-bg-color : black;
+}
+
+
+nav{
+    background-color: var(--nav-bg-color);
+
+}
+
+footer
+{
+    background-color: var(--nav-bg-color);
+}

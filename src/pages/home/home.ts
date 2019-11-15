@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
+import {Usuario} from "../cadastro/cadastro";
 
 @Component({
   selector: 'page-home',
@@ -7,8 +8,14 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  usuario: Usuario;
 
+  constructor(public navCtrl: NavController,public navParams: NavParams) {
+   let nome = navParams.get('nome');
+   let email = navParams.get('email');
+   let id = navParams.get('id');
+   console.log(navParams);
+   window.alert("nome: " + nome + " email: "+ email + " id: "+id);
   }
 
 }

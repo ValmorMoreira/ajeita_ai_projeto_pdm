@@ -34,7 +34,7 @@
           <ion-input type="password" name="senha" [(ngModel)]="model.senha"></ion-input>
         </ion-item>
 
-        <div class="erros">
+        <div class="erros ion-text-center">
             <small> {{erroLogin}} </small>
           </div>
 
@@ -43,15 +43,24 @@
 
 
       <div padding center>
-        <button ion-button (click)="cadastro()">Cadastrar</button>
-        <button ion-button (click)="login()"> Login</button>
-        <button ion-button (click)="logout()"> Logout</button>
+        <br>
+        <button ion-button block color="secondary" (click)="login()"> Login</button>
+        <br>
+        <button ion-button block  color="dark" (click)="cadastro()"> Cadastro</button>
       </div>
+
 
     </ion-card-content>
 
   </ion-card>
 
-
-
 </ion-content>
+
+<ion-footer>
+    <ion-toolbar color="">
+
+<img src="http://portal.utfpr.edu.br/++theme++utfpr_branco/img/logo.png">
+
+
+    </ion-toolbar>
+  </ion-footer>

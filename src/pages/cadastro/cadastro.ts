@@ -91,8 +91,13 @@ export class CadastroPage {
             case "conf":
               this.errorSenha = value;
               break;
-
-              case "email":
+            case "senha":
+              this.errorSenha = value;
+              break;
+            case "senha1":
+              this.errorSenha = value;
+              break;
+            case "email":
               this.errorEmail = value;
               break;
           }

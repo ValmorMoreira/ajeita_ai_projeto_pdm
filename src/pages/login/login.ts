@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams,  ToastController
+import {
+  IonicPage, NavController, NavParams, ToastController
 } from 'ionic-angular';
 import {HomePage} from "../home/home";
 import {TabsPage} from "../tabs/tabs";
@@ -21,6 +22,9 @@ import {UserProvider} from "../../providers/user/user";
 export class LoginPage {
   model: Usuario;
   erroLogin;
+  private nome: string;
+  private email: string;
+  private id: any;
 
   constructor(
     private toast: ToastController,
@@ -28,9 +32,9 @@ export class LoginPage {
     public navParams: NavParams,
     public userProvider: UserProvider) {
 
-      this.model = new Usuario();
-      this.model.email = "ricardo@ricardo.comj";
-      this.model.senha = "123456789";
+    this.model = new Usuario();
+    this.model.email = "ricardo@ricardo.comj";
+    this.model.senha = "123456789";
 
   }
 
@@ -39,19 +43,7 @@ export class LoginPage {
   }
 
 
-  loginkkk() {
-    this.navCtrl.push(TabsPage, {}, {animate: true});
-
-    console.log('Dentro do login');
-    // let user = { this.}
-
-    this.userProvider.heloow();
-
-  }
-
-
-
- login() {
+  login() {
     console.log("Login Usuario");
 
     var data = {
@@ -62,22 +54,24 @@ export class LoginPage {
 
       }
     };
-
     this.userProvider
-      .login(data)
-      .then((result: any) => {
-
-
+      .login(data).then((result: any) => {
         this.toast
-          .create({ message: "Bem vindo!", duration: 1500 })
+          .create({message: "Bem vindo!", duration: 1500})
           .present();
-        this.navCtrl.push(TabsPage, data, { animate: true });
+
+
+
+
+
+        this.navCtrl.push(TabsPage,  result.usuario , {animate: true});
+
+
       })
       .catch((error: any) => {
         this.erroLogin = "";
         console.log("Data");
-        console.log( data);
-
+        console.log(data);
 
 
         Object.entries(error.error.erros).forEach(([key, value]) => {
@@ -92,8 +86,6 @@ export class LoginPage {
 
       });
   }
-
-
 
 
   cadastro() {

@@ -36,6 +36,10 @@ export class LoginPage {
     this.model.email = "ricardo@ricardo.comj";
     this.model.senha = "123456789";
 
+    // revomver depois que terminar a tela home
+    this.navCtrl.push(TabsPage,  {} , {animate: true});
+
+
   }
 
   ionViewDidLoad() {

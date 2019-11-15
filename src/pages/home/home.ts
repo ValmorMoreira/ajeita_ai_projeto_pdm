@@ -15,7 +15,6 @@ export class HomePage {
    let email = navParams.get('email');
    let id = navParams.get('id');
    console.log(navParams);
-   window.alert("nome: " + nome + " email: "+ email + " id: "+id);
   }
 
 }

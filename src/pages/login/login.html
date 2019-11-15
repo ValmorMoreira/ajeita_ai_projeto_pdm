@@ -6,19 +6,16 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>login</ion-title>
+    <ion-title >login</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content>
-  <div *ngIf="autenticacao" padding>
-    <h3>Você está conectado!</h3>
-  </div>
 
   <ion-card>
 
-    <ion-card-header>
+    <ion-card-header >
       Seja bem vindo!
     </ion-card-header>
 
@@ -30,7 +27,7 @@
         </ion-item>
 
         <ion-item>
-          <ion-label floating>Senha</ion-label>
+          <ion-label stacked floating>Senha</ion-label>
           <ion-input type="password" name="senha" [(ngModel)]="model.senha"></ion-input>
         </ion-item>
 
@@ -44,9 +41,9 @@
 
       <div padding center>
         <br>
-        <button ion-button block color="secondary" (click)="login()"> Login</button>
+        <button ion-button block  round color="default" (click)="login()"> Login</button>
         <br>
-        <button ion-button block  color="dark" (click)="cadastro()"> Cadastro</button>
+        <button ion-button clear block round color="dark" (click)="cadastro()"> Cadastro</button>
       </div>
 
 

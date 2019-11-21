@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {MyApp} from './app.component';
 
+import { IonicStorageModule } from '@ionic/storage';
 
 import {ContactPage} from '../pages/contact/contact';
 import {HomePage} from '../pages/home/home';
@@ -19,6 +20,7 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {LoginPage} from "../pages/login/login";
 import {CadastroPage} from "../pages/cadastro/cadastro";
 import { UserProvider } from '../providers/user/user';
+import {PerfilPage} from "../pages/perfil/perfil";
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { UserProvider } from '../providers/user/user';
     ContactPage,
     CadastroPage,
     HomePage,
+    PerfilPage,
     TabsPage,
     LoginPage
   ],
@@ -33,7 +36,10 @@ import { UserProvider } from '../providers/user/user';
     BrowserModule,
     HttpModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
+
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -41,6 +47,7 @@ import { UserProvider } from '../providers/user/user';
     ContactPage,
     CadastroPage,
     HomePage,
+    PerfilPage,
     TabsPage,
     LoginPage
   ],

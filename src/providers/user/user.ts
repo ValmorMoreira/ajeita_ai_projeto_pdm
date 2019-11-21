@@ -1,26 +1,24 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Storage} from '@ionic/storage';
 
-/*
-  Generated class for the UserProvider provider.
+const USER = 'usuario';
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class UserProvider {
   apiCadastro = 'http://localhost/spotted/cadastroApi';
+  apiAtualiza = 'http://localhost/spotted/atualizaApi';
   apiLogin = 'http://localhost/spotted/login/api';
 
   // constructor(public http: HttpClient) {
   //   console.log('Hello UserProvider Provider');
   // }
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, public storage: Storage) {
     console.log('Hello UserProvider Provider');
   }
 
 
-  heloow(){
+  heloow() {
     console.log("BoaS")
   }
 
@@ -35,7 +33,19 @@ export class UserProvider {
     });
   }
 
-  login(data){
+
+  atualizaContato(data) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.apiAtualiza + '', data)
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
+  login(data) {
     return new Promise((resolve, reject) => {
       this.http.post(this.apiLogin + '', data)
         .subscribe(res => {
@@ -44,5 +54,15 @@ export class UserProvider {
           reject(err);
         });
     });
+  }
+
+  storedUsuario(usuario) {
+
+    if (usuario) {
+      console.log(usuario);
+       this.storage.set("USER", usuario);
+    }else{
+      console.log("Error!!!!!!!!!!!!");
+    }
   }
 }

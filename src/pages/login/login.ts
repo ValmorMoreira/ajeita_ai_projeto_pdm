@@ -33,11 +33,11 @@ export class LoginPage {
     public userProvider: UserProvider) {
 
     this.model = new Usuario();
-    this.model.email = "ricardo@ricardo.comj";
+    this.model.email = "ricardo@ricardo.com";
     this.model.senha = "123456789";
 
     // revomver depois que terminar a tela home
-    this.navCtrl.push(TabsPage,  {} , {animate: true});
+    //this.navCtrl.push(TabsPage,  {} , {animate: true});
 
 
   }
@@ -52,7 +52,6 @@ export class LoginPage {
 
     var data = {
       usuario: {
-
         email: this.model.email,
         senha: this.model.senha,
 
@@ -60,13 +59,13 @@ export class LoginPage {
     };
     this.userProvider
       .login(data).then((result: any) => {
+        console.log("Ricardo");
+        console.log(result);
+
+     this.userProvider.storedUsuario(result);
         this.toast
           .create({message: "Bem vindo!", duration: 1500})
           .present();
-
-
-
-
 
         this.navCtrl.push(TabsPage,  result.usuario , {animate: true});
 

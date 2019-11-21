@@ -1,21 +1,18 @@
-import { Component } from "@angular/core";
-import {
-  IonicPage,
-  NavController,
-  NavParams,
-  ToastController
-} from "ionic-angular";
-import { UserProvider } from "../../providers/user/user";
-import { HomePage } from "../home/home";
-import { TabsPage } from "../tabs/tabs";
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import {Usuario} from "../cadastro/cadastro";
+import {UserProvider} from "../../providers/user/user";
+import {TabsPage} from "../tabs/tabs";
+import {Storage} from '@ionic/storage';
 
 
 @IonicPage()
 @Component({
-  selector: "page-cadastro",
-  templateUrl: "cadastro.html"
+  selector: 'page-perfil',
+  templateUrl: 'perfil.html',
 })
-export class CadastroPage {
+export class PerfilPage {
+
   erroCadastro = "";
   model: Usuario;
   photo: string = "";
@@ -25,23 +22,34 @@ export class CadastroPage {
   errorSobrenome: string;
   errorSenha: string;
 
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public userProvider: UserProvider,
-    private toast: ToastController
+    private toast: ToastController,
+    private storage: Storage
   ) {
     this.model = new Usuario();
-    this.model.nome = "Matheus";
-    this.model.sobrenome = "Aleixo";
-    this.model.senha = "ricardo123";
-    this.model.senha1 = "ricardo123";
-    this.model.email = "chupaminhapica@gaymail.com";
+
+    storage.get("USER").then((user) => {
+      console.log("dados: ");
+      console.log(user);
+      console.log(user.usuario.nome);
+
+     this.model.nome = user.usuario.nome;
+     this.model.sobrenome = user.usuario.sobrenome;
+     this.model.senha = "";
+     this.model.senha1 = "";
+     this.model.email = user.usuario.email;
+
+    });
+
+
+
+
   }
 
-  ionViewDidLoad() {
-    console.log("ionViewDidLoad CadastroPage");
-  }
 
   salvarUser() {
     console.log("Salvando usuário");
@@ -58,14 +66,14 @@ export class CadastroPage {
     };
 
     this.userProvider
-      .addContact(data)
+      .atualizaContato(data)
       .then((result: any) => {
         console.log(data);
 
         this.toast
-          .create({ message: "Contato criado com susesso", duration: 3000 })
+          .create({message: "Usuario editado com susesso", duration: 3000})
           .present();
-        this.navCtrl.push(TabsPage, data, { animate: true });
+        this.navCtrl.push(TabsPage, data, {animate: true});
       })
       .catch((error: any) => {
         this.erroCadastro = "";
@@ -99,12 +107,11 @@ export class CadastroPage {
         });
       });
   }
+
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad PerfilPage');
+  }
+
 }
-export class Usuario {
-  nome: string;
-  sobrenome: string;
-  senha: string;
-  senha1: string;
-  email: string;
-  img: string;
-}
+

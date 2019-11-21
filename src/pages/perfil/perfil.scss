@@ -1,0 +1,28 @@
+page-perfil {
+  img{
+    align-content: center;
+    background-color: #ddd;
+    border-radius: 100%;
+    height: 200px;
+    object-fit: cover;
+    width: 200px;
+  }
+
+  div.container {
+    width: 100%;
+    height: 10em;
+    position: relative }
+
+
+  ion-input{
+    border-bottom: 2px solid #b400ff;
+
+  }
+}
+
+div.container img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%) }

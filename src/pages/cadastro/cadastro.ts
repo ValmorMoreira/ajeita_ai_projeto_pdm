@@ -1,13 +1,13 @@
-import { Component } from "@angular/core";
+import {Component} from "@angular/core";
 import {
   IonicPage,
   NavController,
   NavParams,
   ToastController
 } from "ionic-angular";
-import { UserProvider } from "../../providers/user/user";
-import { HomePage } from "../home/home";
-import { TabsPage } from "../tabs/tabs";
+import {UserProvider} from "../../providers/user/user";
+import {HomePage} from "../home/home";
+import {TabsPage} from "../tabs/tabs";
 
 
 @IonicPage()
@@ -53,7 +53,8 @@ export class CadastroPage {
         senha: this.model.senha,
         senha1: this.model.senha1,
         email: this.model.email,
-        img: ""
+        img: "",
+        id: this.model.id
       }
     };
 
@@ -63,9 +64,9 @@ export class CadastroPage {
         console.log(data);
 
         this.toast
-          .create({ message: "Contato criado com susesso", duration: 3000 })
+          .create({message: "Contato criado com susesso", duration: 3000})
           .present();
-        this.navCtrl.push(TabsPage, data, { animate: true });
+        this.navCtrl.push(TabsPage, data, {animate: true});
       })
       .catch((error: any) => {
         this.erroCadastro = "";
@@ -100,6 +101,7 @@ export class CadastroPage {
       });
   }
 }
+
 export class Usuario {
   nome: string;
   sobrenome: string;
@@ -107,4 +109,5 @@ export class Usuario {
   senha1: string;
   email: string;
   img: string;
+  id: any;
 }

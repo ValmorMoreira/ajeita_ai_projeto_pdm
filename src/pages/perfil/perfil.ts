@@ -38,6 +38,7 @@ export class PerfilPage {
       console.log(user.usuario.nome);
 
      this.model.nome = user.usuario.nome;
+     this.model.id = user.usuario.id;
      this.model.sobrenome = user.usuario.sobrenome;
      this.model.senha = "";
      this.model.senha1 = "";

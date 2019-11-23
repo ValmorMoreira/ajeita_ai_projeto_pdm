@@ -80,14 +80,14 @@
           <small> {{errorSenha}} </small>
         </div>
 
-        <ion-item>
-          <ion-label floating>email</ion-label>
-          <ion-input warning class="errosInput" *ngIf="errorEmail; else errorClass" #noClass type="text" name="email"
-                     [(ngModel)]="model.email">
-          </ion-input>
-          <ion-input *ngIf="!errorEmail; else noClass" #erroClass type="text" name="email" [(ngModel)]="model.email">
-          </ion-input>
-        </ion-item>
+<!--        <ion-item>-->
+<!--          <ion-label floating>email</ion-label>-->
+<!--          <ion-input warning class="errosInput" *ngIf="errorEmail; else errorClass" #noClass type="text" name="email"-->
+<!--                     [(ngModel)]="model.email">-->
+<!--          </ion-input>-->
+<!--          <ion-input *ngIf="!errorEmail; else noClass" #erroClass type="text" name="email" [(ngModel)]="model.email">-->
+<!--          </ion-input>-->
+<!--        </ion-item>-->
 
         <div class="erros">
           <small> {{errorEmail}} </small>

@@ -40,9 +40,10 @@ export class PerfilPage {
      this.model.nome = user.usuario.nome;
      this.model.id = user.usuario.id;
      this.model.sobrenome = user.usuario.sobrenome;
-     this.model.senha = "";
-     this.model.senha1 = "";
+     this.model.senha = "123123123";
+     this.model.senha1 = "123123123";
      this.model.email = user.usuario.email;
+     this.model.img = user.usuario.img;
 
     });
 
@@ -57,12 +58,13 @@ export class PerfilPage {
 
     var data = {
       usuario: {
+        id : this.model.id,
         nome: this.model.nome,
         sobrenome: this.model.sobrenome,
         senha: this.model.senha,
         senha1: this.model.senha1,
         email: this.model.email,
-        img: ""
+        img: this.model.img
       }
     };
 
@@ -74,7 +76,11 @@ export class PerfilPage {
         this.toast
           .create({message: "Usuario editado com susesso", duration: 3000})
           .present();
-        this.navCtrl.push(TabsPage, data, {animate: true});
+        this.userProvider.storedUsuario(result);
+
+        //Inserir o atualizador
+
+
       })
       .catch((error: any) => {
         this.erroCadastro = "";

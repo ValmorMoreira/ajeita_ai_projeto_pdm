@@ -11,7 +11,6 @@ import {MyApp} from './app.component';
 
 import { IonicStorageModule } from '@ionic/storage';
 
-import {ContactPage} from '../pages/contact/contact';
 import {HomePage} from '../pages/home/home';
 import {TabsPage} from '../pages/tabs/tabs';
 
@@ -25,7 +24,6 @@ import {PerfilPage} from "../pages/perfil/perfil";
 @NgModule({
   declarations: [
     MyApp,
-    ContactPage,
     CadastroPage,
     HomePage,
     PerfilPage,
@@ -44,7 +42,6 @@ import {PerfilPage} from "../pages/perfil/perfil";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ContactPage,
     CadastroPage,
     HomePage,
     PerfilPage,

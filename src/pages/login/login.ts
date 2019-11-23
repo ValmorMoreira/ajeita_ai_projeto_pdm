@@ -63,7 +63,7 @@ export class LoginPage {
 
      this.userProvider.storedUsuario(result);
         this.toast
-          .create({message: "Bem vindo!", duration: 1500})
+          .create({message: "Bem vindo!", duration: 750})
           .present();
 
         this.navCtrl.push(TabsPage,  result.usuario , {animate: true});

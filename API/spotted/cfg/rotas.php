@@ -12,7 +12,7 @@ $rotas = [
         'POST' => '\Controlador\LoginControlador#login',
     ],
 
-    '/login/api'=>[
+    '/login/api' => [
         'POST' => '\Controlador\LoginControlador#loginViaApi',
     ],
 
@@ -23,9 +23,12 @@ $rotas = [
 
     ],
     '/cadastroApi' => [
-
-        'GET' => '\Controlador\UsuarioControlador#armazenarApi',
         'POST' => '\Controlador\UsuarioControlador#armazenarApi',
+
+    ],
+    '/atualizaApi' => [
+        'POST' => '\Controlador\UsuarioControlador#atualizaApi',
+        'GET' => '\Controlador\UsuarioControlador#atualizaApi',
 
     ],
 

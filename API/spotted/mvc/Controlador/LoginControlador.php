@@ -12,10 +12,9 @@ class LoginControlador extends Controlador
     {
 
 
-
         $usuarioID = DW3Sessao::get('usuario');
 
-        if ( !$usuarioID ) {
+        if (!$usuarioID) {
 
             $this->visao('login/index.php');
 
@@ -30,9 +29,9 @@ class LoginControlador extends Controlador
     public function loginPageAPI()
     {
         header('Content-Type: application/json');
-      //  $usuarios = Usuario::buscarTodos();
+        //  $usuarios = Usuario::buscarTodos();
 
-       // echo json_encode($usuarios);
+        // echo json_encode($usuarios);
 
     }
 
@@ -48,10 +47,10 @@ class LoginControlador extends Controlador
     public function login()
     {
         $email = $_POST['usuario'];
-      //  setcookie('emailLogin', $email, time() + 600);
+        //  setcookie('emailLogin', $email, time() + 600);
         $usuario = Usuario::buscarEmail($email);
 
-        if ( $usuario && $usuario->verificarSenha($_POST['senha']) ) {
+        if ($usuario && $usuario->verificarSenha($_POST['senha'])) {
             DW3Sessao::set('usuario', $usuario);
 
             $this->redirecionar(URL_RAIZ . 'questao');
@@ -79,15 +78,34 @@ class LoginControlador extends Controlador
         $senha = $usuarioTemp["senha"];
 
 
-
-
         $usuario = Usuario::buscarEmail($email);
 
-        if ( $usuario && $usuario->verificarSenha($senha) ) {
+
+
+
+
+        if ($usuario && $usuario->verificarSenha($senha)) {
             DW3Sessao::set('usuario', $usuario);
 
+            $nome = $usuario->getNome();
+            $sobrenome = $usuario->getSobrenome();
+            $email = $usuario->getEmail();
+            $imagem = $usuario->getImagem();
+            $id = $usuario->getId();
+
+
             header('HTTP/1.1 200 Accepted');
-            $json = '{"title": "Accepted", "Status": ' . 200 . '}';
+
+            $json = '{"title": "Accepted", "Status": ' . 200 .
+                ', "usuario": {'
+                .'"nome": "' . $nome. '",'
+                .'"sobrenome": "' . $sobrenome. '",'
+                .' "email" : "' . $email .'",'
+                .' "imagem" : "' . $imagem .'",'
+                .' "id" : ' . $id .''.
+
+                '}}';
+
             print_r($json);
 
 

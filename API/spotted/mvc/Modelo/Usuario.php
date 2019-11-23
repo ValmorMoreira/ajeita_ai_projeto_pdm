@@ -10,6 +10,7 @@ class Usuario extends Modelo
 {
     const BUSCAR_TODOS = 'SELECT * FROM usuarios ';
     const INSERIR = 'INSERT INTO usuarios(nome, sobrenome, email, senha) VALUES (?, ? , ? , ?)';
+    const ATUALIZAR = 'UPDATE usuarios set nome = ? , sobrenome = ? , senha = ?  where id_usuario = ?';
     const BUSCAR_POR_EMAIL = 'SELECT * FROM usuarios WHERE email = ? LIMIT 1';
     const CONTAR_ACERTOS = 'select count(acertou) from respostas where id_usuario = ?  and acertou = 1';
     const CONTAR_ERROS = 'select count(acertou) from respostas where id_usuario = ?  and acertou = 0';
@@ -46,6 +47,7 @@ class Usuario extends Modelo
     }
 
 
+
     public function inserir()
     {
 
@@ -60,6 +62,36 @@ class Usuario extends Modelo
         $this->id = DW3BancoDeDados::getPdo()->lastInsertId();
         DW3BancoDeDados::getPdo()->commit();
     }
+
+
+
+
+    public function atualizar($nome,$sobrenome,$senha , $id)
+    {
+
+        //const ATUALIZAR = 'UPDATE usuarios set nome = ? , sobrenome = ? , senha = ?  where id_usuario = ?;';
+        DW3BancoDeDados::getPdo()->beginTransaction();
+        $comando = DW3BancoDeDados::prepare(self::ATUALIZAR);
+
+
+        $senhaCripto = password_hash($senha, PASSWORD_BCRYPT);
+
+
+        $comando->bindValue(1, $nome, PDO::PARAM_STR);
+        $comando->bindValue(2, $sobrenome, PDO::PARAM_STR);
+        $comando->bindValue(3, $senhaCripto, PDO::PARAM_STR);
+        $comando->bindValue(4, $id, PDO::PARAM_INT);
+
+
+
+        $comando->execute();
+        DW3BancoDeDados::getPdo()->commit();
+
+
+
+    }
+
+
 
     public static function buscarEmail($email)
     {
@@ -192,6 +224,59 @@ class Usuario extends Modelo
 
     }
 
+    protected function verificarErrosAtuliza()
+    {
+
+        //Verifica o tamanho do nome
+        if ( !$this->verificaTamanhoString($this->nome, 2) ) {
+            $this->insereError('nome');
+        }
+        //Verifica o tamanho do sobrenome
+        if ( !$this->verificaTamanhoString($this->sobrenome, 4) ) {
+            $this->insereError('sobrenome');
+        }
+        //Verifica email
+        if ( !preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $this->email) ) {
+            $this->insereError('emailInvalido');
+        }
+        //Verifica Nome correto
+        if ( !$this->verificaLetrasString($this->nome) ) {
+            $this->insereError('nomeInvalido');
+        }
+        //Verifica Sobrenome Correto
+        if ( !$this->verificaLetrasString($this->sobrenome) ) {
+            $this->insereError('sobrenomeInvalido');
+        }
+
+
+        //Verifica o tamanho da senha
+        if ( $this->verificaTamanhoString($this->senha, 8) ) {
+
+            //Verificando se as senhas confere uma com a outra
+            if ( !($this->senha === $this->senha1) ) {
+
+                $this->insereError('senhaDif');
+
+            }
+
+        } else {
+            $this->insereError('senha');
+            $this->insereError('senha1');
+
+        }
+
+
+        if ( !$this->verificaTamanhoString($this->email, 8) ) {
+
+            $this->insereError('email');
+
+        }
+
+
+
+
+    }
+
     private function verificaLetrasString($string)
     {
         $resultado = preg_match('/^[a-zA-Zà-úÀ-ú ]*$/',$string , $teste);
@@ -271,6 +356,23 @@ class Usuario extends Modelo
     public function getNome()
     {
         return $this->nome;
+    }
+
+
+
+    public function getSobrenome()
+    {
+        return $this->sobrenome;
+    }
+
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    public function setImg($img): void
+    {
+        $this->img = $img;
     }
 
 

@@ -37,6 +37,7 @@ export class CadastroPage {
     this.model.senha = "ricardo123";
     this.model.senha1 = "ricardo123";
     this.model.email = "chupaminhapica@gaymail.com";
+    this.model.id = null;
   }
 
   ionViewDidLoad() {
@@ -53,7 +54,7 @@ export class CadastroPage {
         senha: this.model.senha,
         senha1: this.model.senha1,
         email: this.model.email,
-        img: "",
+        img: this.model.img,
         id: this.model.id
       }
     };
@@ -64,8 +65,11 @@ export class CadastroPage {
         console.log(data);
 
         this.toast
-          .create({message: "Contato criado com susesso", duration: 3000})
+          .create({message: "Contato criado com susesso", duration: 1000})
           .present();
+
+        this.userProvider.storedUsuario(result);
+
         this.navCtrl.push(TabsPage, data, {animate: true});
       })
       .catch((error: any) => {

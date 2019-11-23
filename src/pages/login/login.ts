@@ -34,7 +34,7 @@ export class LoginPage {
 
     this.model = new Usuario();
     this.model.email = "ricardo@ricardo.com";
-    this.model.senha = "123456789";
+    this.model.senha = "123123123";
 
     // revomver depois que terminar a tela home
     //this.navCtrl.push(TabsPage,  {} , {animate: true});
@@ -59,8 +59,7 @@ export class LoginPage {
     };
     this.userProvider
       .login(data).then((result: any) => {
-        console.log("Ricardo");
-        console.log(result);
+
 
      this.userProvider.storedUsuario(result);
         this.toast
@@ -108,4 +107,5 @@ export class Usuario {
   senha1: string;
   email: string;
   img: string;
+  id: any;
 }

@@ -32,6 +32,12 @@ $rotas = [
 
     ],
 
+    '/problemasApi' => [
+        'GET' => '\Controlador\ProblemasControlador#armazenarApi',
+        'POST' => '\Controlador\ProblemasControlador#armazenarApi',
+
+    ],
+
 
     '/sair' => [
         'GET' => '\Controlador\LoginControlador#destruirLogin',

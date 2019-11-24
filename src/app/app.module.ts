@@ -13,7 +13,7 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import {HomePage} from '../pages/home/home';
 import {TabsPage} from '../pages/tabs/tabs';
-
+import {AjeitaAiPage} from "../pages/ajeita-ai/ajeita-ai";
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {LoginPage} from "../pages/login/login";
@@ -27,6 +27,7 @@ import {PerfilPage} from "../pages/perfil/perfil";
     CadastroPage,
     HomePage,
     PerfilPage,
+    AjeitaAiPage,
     TabsPage,
     LoginPage
   ],
@@ -45,6 +46,7 @@ import {PerfilPage} from "../pages/perfil/perfil";
     CadastroPage,
     HomePage,
     PerfilPage,
+    AjeitaAiPage,
     TabsPage,
     LoginPage
   ],

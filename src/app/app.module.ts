@@ -20,6 +20,7 @@ import {LoginPage} from "../pages/login/login";
 import {CadastroPage} from "../pages/cadastro/cadastro";
 import { UserProvider } from '../providers/user/user';
 import {PerfilPage} from "../pages/perfil/perfil";
+import { ProblemaProvider } from '../providers/problema/problema';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import {PerfilPage} from "../pages/perfil/perfil";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserProvider
+    UserProvider,
+    ProblemaProvider
   ]
 })
 export class AppModule {

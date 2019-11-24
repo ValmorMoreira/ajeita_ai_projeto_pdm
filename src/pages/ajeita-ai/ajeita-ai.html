@@ -6,12 +6,63 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>AjeitaAi</ion-title>
+    <ion-title>AjeitaAí</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
 
-  <h1>Ola mundo</h1>
+  <ion-card>
+
+    <ion-card-header >
+      <h1>Problema</h1>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-list>
+
+        <ion-item>
+
+          <ion-label floating>Qual é o problema</ion-label>
+          <ion-input warning class="errosInput" *ngIf="errorProblema; else errorClass" #noClass type="text" name="problema"
+                     [(ngModel)]="model.problema">
+          </ion-input>
+          <ion-input *ngIf="!errorProblema; else noClass" #erroClass type="text" name="problema" [(ngModel)]="model.problema">
+          </ion-input>
+        </ion-item>
+
+        <div class="erros">
+          <small> {{errorProblema}} </small>
+        </div>
+
+
+
+
+        <ion-item>
+          <ion-label  floating>Descrição do problema</ion-label>
+          <ion-textarea row="6" warning class="errosInput" *ngIf="errorSobrenome; else errorClass" #noClass type="text"
+                     name="sobrenome" [(ngModel)]="model.sobrenome">
+          </ion-textarea>
+          <ion-textarea row="6" *ngIf="!errorSobrenome; else noClass" #erroClass type="text" name="sobrenome"
+                     [(ngModel)]="model.sobrenome"></ion-textarea>
+        </ion-item>
+
+        <div class="erros">
+          <small> {{errorSobrenome}} </small>
+        </div>
+
+
+      </ion-list>
+
+
+      <div padding>
+        <button ion-button ion-col block (click)="salvarProblema()">Salvar</button>
+      </div>
+    </ion-card-content>
+
+  </ion-card>
+
+
 </ion-content>

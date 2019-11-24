@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
 import {UserProvider} from "../../providers/user/user";
+import { ProblemaProvider} from "../../providers/problema/problema";
 import {TabsPage} from "../tabs/tabs";
 import {Storage} from '@ionic/storage';
 
@@ -15,6 +16,8 @@ export class AjeitaAiPage {
   model: Usuario;
   modelo: Problema;
 
+    LAT = -25.489163;
+    LOG = -25.489163;
   errorEmail: string;
   errorNome: string;
   errorSobrenome: string;
@@ -24,6 +27,7 @@ export class AjeitaAiPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public userProvider: UserProvider,
+    public problemaProvider: ProblemaProvider,
     private toast: ToastController,
     private storage: Storage
   ) {
@@ -43,6 +47,7 @@ export class AjeitaAiPage {
       this.model.sobrenome = user.usuario.sobrenome;
       this.model.email = user.usuario.email;
       this.model.img = user.usuario.img;
+
 
     });
   }
@@ -69,8 +74,8 @@ export class AjeitaAiPage {
         problema: this.modelo.problema,
         descricao: this.modelo.descricao,
         imagem: this.modelo.imagem,
-        latitude: this.modelo.latitude,
-        longitude: this.modelo.longitude,
+        latitude: null,
+        longitude: null,
         usuarioId: this.model.id,
         dataCriacao: null,
         foiConcertado: null,
@@ -81,8 +86,8 @@ export class AjeitaAiPage {
       }
     };
 
-    this.userProvider
-      .addContact(data)
+    this.problemaProvider
+      .addProblema(data)
       .then((result: any) => {
         console.log(data);
 
@@ -90,9 +95,8 @@ export class AjeitaAiPage {
           .create({message: "Contato criado com susesso", duration: 1000})
           .present();
 
-        this.userProvider.storedUsuario(result);
+        //this.userProvider.storedUsuario(result);
 
-        this.navCtrl.push(TabsPage, data, {animate: true});
       })
       .catch((error: any) => {
         this.erroCadastro = "";

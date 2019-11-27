@@ -27,9 +27,15 @@
 
           <ion-label floating>Qual é o problema</ion-label>
           <ion-input warning class="errosInput" *ngIf="errorProblema; else errorClass" #noClass type="text" name="problema"
+<<<<<<< HEAD
                      [(ngModel)]="modelo.problema">
           </ion-input>
           <ion-input *ngIf="!errorProblema; else noClass" #erroClass type="text" name="problema" [(ngModel)]="modelo.problema">
+=======
+                     [(ngModel)]="model.problema">
+          </ion-input>
+          <ion-input *ngIf="!errorProblema; else noClass" #erroClass type="text" name="problema" [(ngModel)]="model.problema">
+>>>>>>> origin/AjeitaAí
           </ion-input>
         </ion-item>
 
@@ -43,10 +49,17 @@
         <ion-item>
           <ion-label  floating>Descrição do problema</ion-label>
           <ion-textarea row="6" warning class="errosInput" *ngIf="errorSobrenome; else errorClass" #noClass type="text"
+<<<<<<< HEAD
                      name="sobrenome" [(ngModel)]="modelo.descricao">
           </ion-textarea>
           <ion-textarea row="6" *ngIf="!errorSobrenome; else noClass" #erroClass type="text" name="sobrenome"
                      [(ngModel)]="modelo.descricao"></ion-textarea>
+=======
+                     name="sobrenome" [(ngModel)]="model.sobrenome">
+          </ion-textarea>
+          <ion-textarea row="6" *ngIf="!errorSobrenome; else noClass" #erroClass type="text" name="sobrenome"
+                     [(ngModel)]="model.sobrenome"></ion-textarea>
+>>>>>>> origin/AjeitaAí
         </ion-item>
 
         <div class="erros">
